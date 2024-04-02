@@ -2,9 +2,19 @@
 
 {% block page_content %}
 <h1>{{ title }}</h1>
-<h2>ALyhaywy osama</h2>
-{% endblock %}
+<h3>Flight Details</h3>
+<div class="row">
+    <div class="col-md-4">
+            Airline: {{ doc.get_title() or doc.name }}<br>
+            {{doc.source_airport_code}} -> {{doc.destination_airport_code}} <br>
+            {{ doc.date_of_departure }} | {{doc.time_of_departure}} <br>
+            Duration: {{ frappe.utils.format_duration(doc.duration) }} <br>
+					
+				<a class='btn btn-lg btn-primary mt-3' href='#'> Book Flight  </a>
+    </div>
+</div>
 
+{% endblock %}
 
 
 <!-- this is a sample default web page template -->
